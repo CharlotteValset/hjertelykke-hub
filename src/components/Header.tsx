@@ -1,4 +1,4 @@
-export default function Header(){
+export const Header = () => {
 return (
 <header className="border-b bg-white/70 backdrop-blur">
 <div className="container py-4 flex items-center justify-between">
@@ -7,9 +7,6 @@ return (
 rounded-2xl bg-hj-pink">💛</span>
 <span className="font-semibold">Hjertelykke Hub</span>
 </div>
-<nav aria-label="Hovedmeny" className="text-sm text-gray-600">
-<a className="hover:underline" href="#">Hjem</a>
-</nav>
 </div>
 </header>
 )
