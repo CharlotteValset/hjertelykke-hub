@@ -1,4 +1,4 @@
-# Hjertelykke Hub 
+# Hjertelykke Hub
 
 A small web app built with **React + TypeScript + Vite + Tailwind CSS**.  
 The project is created as a learning playground and showcase for new features in React, TypeScript and Python (later via API).
@@ -69,4 +69,3 @@ Will be deployed on Vercel.
 ## ✨ Author
 
 Developed by Charlotte Valset
-
