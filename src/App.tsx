@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Card from './components/Card';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import { IdeaBank } from './components/IdeaBank';
 
 export default function App() {
 const [count, setCount] = useLocalStorage<number>('glad-counter', 0);
@@ -48,6 +48,7 @@ const increment = () => setCount((c) => c + 1);
             </div>
           </div>
         </section>
+        <IdeaBank />
       </main>
       <Footer />
     </div>
