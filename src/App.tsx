@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Card from './components/Card';
+import { useLocalStorage } from './hooks/useLocalStorage';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+const [count, setCount] = useLocalStorage<number>('glad-counter', 0);
+const increment = () => setCount((c) => c + 1);
+
+  const [message, setMessage] = useState('');
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <Header />
+      <main className="container space-y-6 py-8">
+        <section aria-labelledby="hero-title" className="card">
+          <h1 id="hero-title" className="text-2xl font-semibold mb-4">
+            Hjertelykke Hub
+          </h1>
+          <p className="text-gray-600 mb-6">
+            En liten app for å loggføre gode gjerninger, ideer og gjøremål.
+          </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div>
+              <h2 className="text-lg font-medium mb-2">Gledesteller</h2>
+              <p className="mb-3">
+                Antall registrerte gode gjerninger: <strong>{count}</strong>
+              </p>
+              <button className="btn" onClick={increment} aria-label="Øk teller">
+                + Legg til en god gjerning
+              </button>
+            </div>
+            <div>
+              <label className="label" htmlFor="live">
+                Skriv en oppmuntrende setning
+              </label>
+              <input
+                id="live"
+                className="input"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Du gjør en forskjell i dag!"
+              />
+              <p className="mt-2 text-sm text-gray-600" aria-live="polite">
+                Forhåndsvisning: {message || '—'}
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
 }
-
-export default App
