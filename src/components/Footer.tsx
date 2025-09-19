@@ -1,4 +1,4 @@
-export default function Footer(){
+export const Footer = () => {
 return (
 <footer className="mt-12 py-8 text-center text-sm text-gray-500">
 <div className="container">
