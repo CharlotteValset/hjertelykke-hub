@@ -64,7 +64,11 @@ This project is built as a step-by-step practice project, where each day of codi
 
 ## 🌍 Deployment
 
-Will be deployed on Vercel.
+The project is deployed on Vercel and can be accessed here:  
+👉 [https://hjertelykke-hub.vercel.app/](https://hjertelykke-hub.vercel.app/)
+
+This is the live version of Hjertelykke Hub.  
+Here you can log good deeds, ideas, and goals in a simple and fun way 💛
 
 ## ✨ Author
 
